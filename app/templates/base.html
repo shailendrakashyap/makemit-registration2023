@@ -100,7 +100,7 @@
                                         <a href="{% url 'check_in_list' %}">Check-in</a>
                                     {% endif %}
                                 </li>
-                                {% if request.user.is_organizer %}
+                                <!-- {% if request.user.is_organizer %}
                                     {% if request.user.has_volunteer_access %}
                                         <li class="{% if 'volunteer' in request.build_absolute_uri %}active{% endif %}"><a
                                                 href="{% url 'volunteer_list' %}">Volunteer</a></li>
@@ -113,7 +113,7 @@
                                         <li class="{% if 'sponsor' in request.build_absolute_uri %}active{% endif %}"><a
                                             href="{% url 'sponsor_user_list' %}">Sponsor</a></li>
                                     {% endif %}
-                                {% endif %}
+                                {% endif %} -->
                             {% endif %}
                             {% if h_hw_enabled %}
                                 {% include 'include/hardware_tab.html' %}

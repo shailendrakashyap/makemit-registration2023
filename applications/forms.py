@@ -167,9 +167,9 @@ class HackerApplicationForm(_BaseApplicationForm, _HackerMentorApplicationForm, 
                        {'name': 'graduation_year', 'space': 12}, {'name': 'gender', 'space': 12},
                        {'name': 'other_gender', 'space': 12}, {'name': 'phone_number', 'space': 12},
                        {'name': 'tshirt_size', 'space': 12}, {'name': 'diet', 'space': 12},
-                       {'name': 'other_diet', 'space': 12}, {'name': 'under_age', 'space': 12},
-                       {'name': 'lennyface', 'space': 12}, ],
-            'description': 'Hey there, before we begin we would like to know a little more about you.'
+                       {'name': 'other_diet', 'space': 12}, {'name': 'under_age', 'space': 12},],
+                    #    {'name': 'lennyface', 'space': 12}, ],
+            # 'description': 'Hey there, before we begin we would like to know a little more about you.'
         },
         'Hackathons?': {
             'fields': [{'name': 'description', 'space': 12}, {'name': 'first_timer', 'space': 12},
@@ -239,19 +239,25 @@ class HackerApplicationForm(_BaseApplicationForm, _HackerMentorApplicationForm, 
                                'you graduate',
             'degree': 'What\'s your major/degree?',
             'other_diet': 'Please fill here in your dietary requirements. We want to make sure we have food for you!',
-            'lennyface': 'tip: you can chose from here <a href="http://textsmili.es/" target="_blank">'
-                         ' http://textsmili.es/</a>',
+            # 'lennyface': 'tip: you can chose from here <a href="http://textsmili.es/" target="_blank">'
+            #              ' http://textsmili.es/</a>',
             'projects': 'You can talk about about past hackathons, personal projects, awards etc. '
-                        '(we love links) Show us your passion! :D',
+                        '(we love links) Show us your passion! :D This is optional :)',
             'reimb_amount': 'We try our best to cover costs for all hackers, but our budget is limited',
-            'resume': 'Accepted file formats: %s' % (', '.join(extensions) if extensions else 'Any'),
-            'origin': "Please select one of the dropdown options or write 'Others'"
+            # 'resume': 'Accepted file formats: %s' % (', '.join(extensions) if extensions else 'Any'),
+            'origin': "Please select one of the dropdown options or write 'Others'",
+            'question_1': 'What is your most prized possession–what makes it so great?',
+            'question_2': 'If you could combine any two unrelated inventions to create something new, would what they be and why?',
+            'question_3': 'Are there more doors or wheels? Why? ',
         }
 
         widgets = {
             'origin': forms.TextInput(attrs={'autocomplete': 'off'}),
-            'description': forms.Textarea(attrs={'rows': 3, 'cols': 40}),
+            # 'description': forms.Textarea(attrs={'rows': 3, 'cols': 40}),
             'projects': forms.Textarea(attrs={'rows': 3, 'cols': 40}),
+            'question_1': forms.Textarea(attrs={'rows': 3, 'cols': 40}),
+            'question_2': forms.Textarea(attrs={'rows': 3, 'cols': 40}),
+            'question_3': forms.Textarea(attrs={'rows': 3, 'cols': 40}),
             'graduation_year': forms.RadioSelect(),
         }
 
@@ -261,11 +267,14 @@ class HackerApplicationForm(_BaseApplicationForm, _HackerMentorApplicationForm, 
             'graduation_year': 'What year will you graduate?',
             'tshirt_size': 'What\'s your t-shirt size?',
             'diet': 'Dietary requirements',
-            'lennyface': 'Describe yourself in one "lenny face"?',
+            # 'lennyface': 'Describe yourself in one "lenny face"?',
             'origin': 'Where are you joining us from?',
-            'description': 'Why are you excited about %s?' % settings.HACKATHON_NAME,
-            'projects': 'What projects have you worked on?',
-            'resume': 'Upload your resume',
+            # 'description': 'Why are you excited about %s?' % settings.HACKATHON_NAME,
+            'question_1': 'What is your most prized possession–what makes it so great?',
+            'question_2': 'If you could combine any two unrelated inventions to create something new, would what they be and why?',
+            'question_3': 'Are there more doors or wheels? Why?',
+            'projects': 'What projects have you worked on? (optional)',
+            # 'resume': 'Upload your resume',
             'reimb_amount': 'How much money (%s) would you need to afford traveling to %s?' % (
                 getattr(settings, 'CURRENCY', '$'), settings.HACKATHON_NAME),
         }

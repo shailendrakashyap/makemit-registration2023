@@ -3,14 +3,14 @@ import os
 
 from django.utils import timezone
 
-HACKATHON_NAME = 'HackAssistant'
+HACKATHON_NAME = 'MakeMIT'
 # What's the name for the application
-HACKATHON_APPLICATION_NAME = 'HackAssistant registration'
+HACKATHON_APPLICATION_NAME = 'MakeMIT 2023 Portal'
 # Hackathon timezone
-TIME_ZONE = 'MST'
+TIME_ZONE = 'EST'
 # This description will be used on the html and sharing meta tags
-HACKATHON_DESCRIPTION = 'HackAssistant is an organization to mantain ' \
-                        'a few open-source projects related with hackathon management'
+HACKATHON_DESCRIPTION = 'MakeMIT is a hardware hackathon that allows undergraduates' \
+                        'to showcase their innovative spirit through large-scale projects.'
 # Domain where application is deployed, can be set by env variable
 HACKATHON_DOMAIN = os.environ.get('DOMAIN', None)
 HEROKU_APP_NAME = os.environ.get('HEROKU_APP_NAME', None)
@@ -19,7 +19,7 @@ if HEROKU_APP_NAME and not HACKATHON_DOMAIN:
 elif not HACKATHON_DOMAIN:
     HACKATHON_DOMAIN = 'localhost:8000'
 # Hackathon contact email: where should all hackers contact you. It will also be used as a sender for all emails
-HACKATHON_CONTACT_EMAIL = 'contact@gerard.space'
+HACKATHON_CONTACT_EMAIL = 'team@makemit.org'
 # Hackathon logo url, will be used on all emails
 HACKATHON_LOGO_URL = 'https://avatars2.githubusercontent.com/u/33712329?s=200&v=4'
 
@@ -27,11 +27,11 @@ HACKATHON_OG_IMAGE = 'https://hackcu.org/img/hackcu_ogimage870x442.png'
 # (OPTIONAL) Track visits on your website
 # HACKATHON_GOOGLE_ANALYTICS = 'UA-7777777-2'
 # (OPTIONAL) Hackathon twitter user
-HACKATHON_TWITTER_ACCOUNT = 'casassaez'
+#HACKATHON_TWITTER_ACCOUNT = 'casassaez'
 # (OPTIONAL) Hackathon Facebook page
-HACKATHON_FACEBOOK_PAGE = 'casassaez'
+#HACKATHON_FACEBOOK_PAGE = 'casassaez'
 # (OPTIONAL) Github Repo for this project (so meta)
-HACKATHON_GITHUB_REPO = 'https://github.com/hackassistant/registration/'
+#HACKATHON_GITHUB_REPO = 'https://github.com/hackassistant/registration/'
 
 # (OPTIONAL) Applications deadline
 # HACKATHON_APP_DEADLINE = timezone.datetime(2018, 2, 24, 3, 14, tzinfo=timezone.pytz.timezone(TIME_ZONE))
@@ -87,7 +87,7 @@ HARDWARE_REQUEST_TIME = 15
 # HACKERS_CAN_REQUEST = False
 
 # Enable dubious separate pipeline (disabled by default)
-DUBIOUS_ENABLED = False
+#DUBIOUS_ENABLED = False
 
 
 # Enable blacklist separate pipeline (disabled by default)

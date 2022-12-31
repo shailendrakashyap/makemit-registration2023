@@ -28,14 +28,14 @@ from user import models as userModels
 
 VIEW_APPLICATION_TYPE = {
     userModels.USR_HACKER: models.HackerApplication,
-    userModels.USR_VOLUNTEER: models.VolunteerApplication,
-    userModels.USR_MENTOR: models.MentorApplication,
+    # userModels.USR_VOLUNTEER: models.VolunteerApplication,
+    # userModels.USR_MENTOR: models.MentorApplication,
 }
 
 VIEW_APPLICATION_FORM_TYPE = {
     userModels.USR_HACKER: forms.HackerApplicationForm,
-    userModels.USR_VOLUNTEER: forms.VolunteerApplicationForm,
-    userModels.USR_MENTOR: forms.MentorApplicationForm,
+    # userModels.USR_VOLUNTEER: forms.VolunteerApplicationForm,
+    # userModels.USR_MENTOR: forms.MentorApplicationForm,
 }
 
 

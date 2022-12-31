@@ -38,10 +38,10 @@ STATUS = [
     (APP_CONFIRMED, 'Confirmed'),
     (APP_CANCELLED, 'Cancelled'),
     (APP_ATTENDED, 'Attended'),
-    (APP_EXPIRED, 'Expired'),
-    (APP_DUBIOUS, DUBIOUS_TEXT),
-    (APP_INVALID, 'Invalid'),
-    (APP_BLACKLISTED, BLACKLIST_TEXT)
+#    (APP_EXPIRED, 'Expired'),
+#    (APP_DUBIOUS, DUBIOUS_TEXT),
+#    (APP_INVALID, 'Invalid'),
+#    (APP_BLACKLISTED, BLACKLIST_TEXT)
 ]
 
 NO_ANSWER = 'NA'
@@ -116,7 +116,7 @@ EXTRA_NAME = [' 2016', ' 2017', ' 2018', ' 2019']
 PREVIOUS_HACKS = [(i, HACK_NAME + EXTRA_NAME[i]) for i in range(0, len(EXTRA_NAME))]
 
 YEARS = [(int(size), size) for size in ('2018 2019 2020 2021 2022 2023 2024'.split(' '))]
-DEFAULT_YEAR = 2018
+DEFAULT_YEAR = 2023
 
 ENGLISH_LEVEL = [(i, str(i)) for i in range(1, 5 + 1)]
 
@@ -325,7 +325,7 @@ class _HackerMentorVolunteerApplication(models.Model):
     first_timer = models.BooleanField(default=False)
 
     # Random lenny face
-    lennyface = models.CharField(max_length=300, default='-.-')
+    # lennyface = models.CharField(max_length=300, default='-.-')
 
     # University
     graduation_year = models.IntegerField(choices=YEARS, default=DEFAULT_YEAR)
@@ -345,7 +345,7 @@ class _HackerMentorApplication(models.Model):
     site = models.URLField(blank=True, null=True)
 
     # Giv me a resume here!
-    resume = models.FileField(upload_to='resumes', null=True, blank=True, validators=[validate_file_extension])
+    # resume = models.FileField(upload_to='resumes', null=True, blank=True, validators=[validate_file_extension])
 
 
 class _VolunteerMentorApplication(models.Model):
@@ -383,7 +383,12 @@ class HackerApplication(
                                        on_delete=models.SET_NULL)
 
     # Why do you want to come to X?
-    description = models.TextField(max_length=500)
+    # description = models.TextField(max_length=500)
+
+    # Questions
+    question_1 = models.TextField(max_length=500, blank=True, null=True)
+    question_2 = models.TextField(max_length=500, blank=True, null=True)
+    question_3 = models.TextField(max_length=500, blank=True, null=True)
 
     # Reimbursement
     reimb = models.BooleanField(default=False)
