@@ -25,3 +25,4 @@ files/*
 *.log
 cache/
 *.sh
+sendgrid.env
